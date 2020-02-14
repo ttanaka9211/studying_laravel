@@ -27,7 +27,7 @@ class HelloController extends Controller
         $rules = [
             'name' => 'required',
             'mail' => 'email',
-            'get' => 'numeric|between:0,150',
+            'age' => 'numeric|between:0,150',
         ];
         $messages = [
             'name.required' => '名前は必ず入力してください。',
