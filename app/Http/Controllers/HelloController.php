@@ -36,6 +36,13 @@ class HelloController extends Controller
             'age.between' => '年齢は０〜１５０の間で入力して下さい。',
         ];
         $validator = Validator ::make($request->all(), $rules, $messages);
+        $validator->sometimes('age', 'min:0', function ($input) {
+            return !is_int($input->age);
+        });
+        $validator->sometimes('age', 'max:200', function ($input) {
+            return !is_int($input->age);
+        });
+
         if ($validator->fails()) {
             return redirect('/hello')
                 ->withErrors($validator)
