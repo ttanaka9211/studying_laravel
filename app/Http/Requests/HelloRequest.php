@@ -39,6 +39,7 @@ class HelloRequest extends FormRequest
         return [
             'name.required' => '名前は必ず入力してください。',
             'mail.email' => 'メールアドレスが必要です。',
+            'age.numeric' => '年齢を整数で入力して下さい。',
             'age.between' => '年齢は０〜150の間で入力してください。',
         ];
     }
