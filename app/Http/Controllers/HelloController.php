@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\HelloRequest;
 use Validator;
 
 class HelloController extends Controller
@@ -23,13 +22,20 @@ class HelloController extends Controller
         return view('hello.index', ['msg' => $msg]);
     }
 
-    public function post(HelloRequest $request)
+    public function post(Request $request)
     {
-        $validator = Validator ::make($request->all(), [
+        $rules = [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|between:0,150',
-        ]);
+            'get' => 'numeric|between:0,150',
+        ];
+        $messages = [
+            'name.required' => '名前は必ず入力してください。',
+            'mail.email' => 'メールアドレスが必要です。',
+            'age.numeric' => '年齢を整数で入力して下さい。',
+            'age.between' => '年齢は０〜１５０の間で入力して下さい。',
+        ];
+        $validator = Validator ::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return redirect('/hello')
                 ->withErrors($validator)
