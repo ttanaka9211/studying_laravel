@@ -30,3 +30,6 @@
         </form>
     </table>
 @endsection
+@section('footer')
+    copyright 2017 tuyano.
+@endsection
