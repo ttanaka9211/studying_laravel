@@ -19,7 +19,8 @@ class HelloServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(
-            'hello.index', 'App\Http\Composers\HelloComposer');
+        View::extend('hello', function ($attribute, $value, $parameters, $validator) {
+            return $value % 2 == 0;
+        });
     }
 }
