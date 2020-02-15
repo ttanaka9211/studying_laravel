@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Validator;
 
 class HelloServiceProvider extends ServiceProvider
 {
@@ -18,7 +19,7 @@ class HelloServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::extend('hello', function ($attribute, $value, $parameters, $validator) {
+        Validator::extend('hello', function ($attribute, $value, $parameters, $validator) {
             return $value % 2 == 0;
         });
     }
