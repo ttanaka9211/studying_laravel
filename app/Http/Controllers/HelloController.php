@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Http\Requests\HelloRequest;
+use App\Http\Requests\HelloRequest;
 
 class HelloController extends Controller
 {
