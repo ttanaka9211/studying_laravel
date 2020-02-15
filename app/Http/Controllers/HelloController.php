@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\HelloRequest;
+use Illuminate\Support\Facades\DB;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        return view('hello.index', ['msg' => 'フォームを入力して下さい。']);
-    }
+        $items = DB::select('select * from people');
 
-    public function post(HelloRequest $request)
-    {
-        return view('hello.index', ['msg' => '正しく入力されました！']);
+        return view('hello.index', ['items' => $items]);
     }
 }
