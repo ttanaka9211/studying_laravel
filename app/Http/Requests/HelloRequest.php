@@ -40,7 +40,11 @@ class HelloRequest extends FormRequest
             'name.required' => '名前は必ず入力してください。',
             'mail.email' => 'メールアドレスが必要です。',
             'age.numeric' => '年齢を整数で入力して下さい。',
+<<<<<<< HEAD
             'age.hello' => 'Hello!入力は偶数のみ受け付けます。',
+=======
+            'age.hello' => 'Hello! 入力は偶数のみ受け付けます。',
+>>>>>>> cd2f1cb77871223e7afea36df989212204f86f11
         ];
     }
 }
