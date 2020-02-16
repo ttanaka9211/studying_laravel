@@ -19,3 +19,5 @@ Route::post('hello', 'HelloController@post');
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
 Route::get('hello/show', 'HelloController@show');
+Rute::get('hello/edit', 'HelloController@edit');
+Rute::post('hello/edit', 'HelloController@edit');
