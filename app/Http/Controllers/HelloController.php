@@ -36,7 +36,7 @@ class HelloController extends Controller
         $item = DB::table('people')
             ->where('id', $request->id)->first();
 
-        return view('hello.edit', ['from' => $item]);
+        return view('hello.edit', ['form' => $item]);
     }
 
     public function update(Request $request)
@@ -46,7 +46,7 @@ class HelloController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::update('people')
+        DB::table('people')
         ->where('id', $request->id)
         ->update($param);
 
