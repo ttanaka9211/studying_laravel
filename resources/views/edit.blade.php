@@ -10,14 +10,14 @@
     <table>
         <form action="/hello/edit" method="post">
             @csrf
-            <input type="hidden" name="id" value="{{$from->id}}">
+            <input type="hidden" name="id" value="{{$form->id}}">
             <tr>
                 <th>name;</th>
-                <td><input type="text" name="name"  value="{{$from->name}}"></td>
+                <td><input type="text" name="name"  value="{{$form->name}}"></td>
             </tr>
             <tr>
                 <th>mail;</th>
-                <td><input type="text" name="mail" value="{{$from->mail}}"></td>
+                <td><input type="text" name="mail" value="{{$form->mail}}"></td>
             </tr>
             <tr>
                 <th>age;</th>
