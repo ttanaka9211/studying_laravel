@@ -8,7 +8,7 @@
     @section('content')
         <table>
             <form action="/hello/edit" method="post">
-                {{ csrf_field() }}
+                @csrf
                 <input type="hidden" name="id" value="{{$form->id}}">
                 <tr>
                     <th>name : </th>
