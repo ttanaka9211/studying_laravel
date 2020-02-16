@@ -18,7 +18,11 @@ Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
+<<<<<<< HEAD
 Route::get('hello/edit', 'HelloController@edit');
 Route::post('hello/edit', 'HelloController@edit');
 Route::get('hello/del', 'HelloController@del');
 Route::post('hello/del', 'HelloController@del');
+=======
+Route::get('hello/show', 'HelloController@show');
+>>>>>>> feature/DB5＿3
