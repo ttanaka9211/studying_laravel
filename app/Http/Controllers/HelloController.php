@@ -36,7 +36,7 @@ class HelloController extends Controller
         $name = $request->name;
         $items = DB::table('people')
         ->where('name', 'like', '%'.$name.'%')
-        ->onWhere('mail', 'like', '%'.$name.'%')
+        ->orWhere('mail', 'like', '%'.$name.'%')
         ->get();
 
         return view('hello.show', ['items' => $items]);
