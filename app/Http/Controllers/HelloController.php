@@ -36,6 +36,6 @@ class HelloController extends Controller
         $id = $request->id;
         $items = DB::table('people')->where('id', '<=', $id)->get();
 
-        return view('hello.show', ['item' => $items]);
+        return view('hello.show', ['items' => $items]);
     }
 }
