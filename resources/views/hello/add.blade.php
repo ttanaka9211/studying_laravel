@@ -10,7 +10,7 @@
 @section('content')
     <table>
         <form action="/hello/add" method="post">
-        {{csr_field()}}
+        @csrf
         <tr>
             <th>name:</th>
             <td><input type="text" name="name" ></td>
