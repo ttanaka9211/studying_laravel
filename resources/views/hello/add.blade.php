@@ -11,11 +11,7 @@
     <table>
         <form action="/hello/add" method="post">
         @csrf
-<<<<<<< HEAD
-            <tr>
-=======
         <tr>
->>>>>>> feature/DB5＿3
             <th>name:</th>
             <td><input type="text" name="name" ></td>
         </tr>
