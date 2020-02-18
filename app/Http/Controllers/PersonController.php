@@ -13,9 +13,4 @@ class PersonController extends Controller
 
         return view('person.index', ['items' => $items]);
     }
-
-    public function getData()
-    {
-        return $this->id.':'.$this->name.'('.$this->age.')';
-    }
 }
