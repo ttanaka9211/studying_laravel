@@ -19,7 +19,7 @@
             <th>Data</th>
         </tr>
         <tr>
-            <td>{{$item->getData}}</td>
+            <td>{{$item->getData()}}</td>
         </tr>
     </table>
     @endif
