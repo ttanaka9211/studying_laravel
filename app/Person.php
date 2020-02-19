@@ -30,6 +30,8 @@ class Person extends Model
     protected static function boot()
     {
         parent::boot();
-        static::addGlobalScope(new ScopePerson());
+        static::addGlobalScope(
+            new ScopePerson()
+        );
     }
 }
