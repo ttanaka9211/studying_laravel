@@ -31,7 +31,7 @@ class Person extends Model
     {
         parent::boot();
         static::addGlobalScope('age', function (Builder $builder) {
-            $builder->where('age', '>', 20);
+            $builder->where('age', '>', 10);
         });
     }
 }
