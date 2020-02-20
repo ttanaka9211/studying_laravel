@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <th>age;</th>
-                <td>{{form->age}}</td>
+                <td>{{$form->age}}</td>
             </tr>
             <tr>
                 <th></th>
