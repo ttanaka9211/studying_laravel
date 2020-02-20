@@ -1,11 +1,11 @@
 @extends('layouts.hello')
-@section('title','PersonEdit')
+@section('title','Person.Edit')
 @section('menubar')
     @parent
     編集ページ
 @endsection
 @section('content')
-    @if (content($errors) > 0)
+    @if (count($errors) > 0)
         <div>
             <ul>
                 @foreach ($errors->all as $error)
