@@ -9,7 +9,7 @@ class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        $items = DB::table('people')->orderBy('age', 'asc')->get();
+        $items = DB::table('people')->simplePaginate(5);
 
         return view('hello.index', ['items' => $items]);
     }
