@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Board;
 use Illuminate\Http\Request;
+use App\Restdata;
 
-class BoardController extends Controller
+class RestappController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $items = Board::with('person')->get();
+        $items = Restdata::all();
 
-        return view('board.index', ['items' => $items]);
-    }
-
-    public function add(Request $request)
-    {
-        return view('board.add');
+        return $items->toArray();
     }
 
     /**
@@ -29,15 +24,9 @@ class BoardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $this->validate($request, Board::$rules);
-        $board = new Board();
-        $form = $request->all();
-        unset($form['_token']);
-        $board->fill($form)->save();
-
-        return redirect('/board');
+        return view('rest.create');
     }
 
     /**
@@ -49,27 +38,36 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {
+        $restdata = new Restdata();
+        $form = $request->all();
+        unset($form['_token']);
+        $restdata->fill($form)->save();
+
+        return redirect('/rest');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Board $board
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Board $board)
+    public function show($id)
     {
+        $item = Restdata::find($id);
+
+        return $item->toArray();
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Board $board
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Board $board)
+    public function edit($id)
     {
     }
 
@@ -77,22 +75,22 @@ class BoardController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Board               $board
+     * @param int                      $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Board $board)
+    public function update(Request $request, $id)
     {
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Board $board
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Board $board)
+    public function destroy($id)
     {
     }
 }
